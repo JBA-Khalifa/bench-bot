@@ -14,7 +14,7 @@ This is a substrate-only bot at the moment.
 
 4. Create a PR
 
-5. Post a comment `/bench <action> <extra>`, for example `/bench runtime module serp_staking`
+5. Post a comment `/bench <action> <extra>`, for example `/bench runtime module setheum_staking`
 
 ## Configuring
 
