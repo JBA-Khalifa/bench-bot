@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:16
 
 COPY . /app
 WORKDIR /app
@@ -6,8 +6,12 @@ WORKDIR /app
 RUN curl https://getsubstrate.io -sSf | /bin/bash -s -- --fast
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-RUN git config --global user.name "Setheum Bench Bot"
+RUN rustup default nightly-2021-03-04
+RUN rustup target add wasm32-unknown-unknown --toolchain nightly-2021-03-04
+
+RUN git config --global user.name "Setheum Benchmarking Bot"
 RUN git config --global user.email jbashir52@gmail.com
+RUN git config --global submodule.recurse true
 
 RUN yarn
 CMD yarn start
